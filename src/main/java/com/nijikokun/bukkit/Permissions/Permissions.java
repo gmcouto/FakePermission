@@ -47,7 +47,7 @@ public class Permissions extends JavaPlugin {
         Server = this.getServer();
         Plugin p = this.getServer().getPluginManager().getPlugin("GroupManager");
         if (p != null) {
-            if (!p.isEnabled()) {
+            if (!this.getServer().getPluginManager().isPluginEnabled(p)) {
                 try {
                     this.getServer().getPluginManager().enablePlugin(p);
                     this.getServer().getPluginManager().enablePlugin(this);
@@ -82,7 +82,7 @@ public class Permissions extends JavaPlugin {
         Plugin p = this.getServer().getPluginManager().getPlugin("GroupManager");
         PluginDescriptionFile pdfFile = this.getDescription();
         if (p != null) {
-            if (!p.isEnabled()) {
+            if (!this.getServer().getPluginManager().isPluginEnabled(p)) {
                 this.getServer().getPluginManager().enablePlugin(p);
             }
             GroupManager gm = (GroupManager) p;
@@ -111,7 +111,6 @@ public class Permissions extends JavaPlugin {
 
     public void setupPermissions() {
         checkEnable();
-        groupManager.reload();
     }
 
     private void checkEnable() {
