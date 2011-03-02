@@ -7,6 +7,7 @@ import com.nijiko.permissions.PermissionHandler;
 import java.io.File;
 import java.util.logging.Logger;
 import org.anjocaido.groupmanager.GroupManager;
+import org.anjocaido.groupmanager.permissions.NijikoPermissionsProxy;
 import org.bukkit.Server;
 import org.bukkit.event.player.PlayerChatEvent;
 import org.bukkit.event.player.PlayerListener;
@@ -64,7 +65,7 @@ public class Permissions extends JavaPlugin {
                 }
                 GroupManager gm = (GroupManager) p;
                 groupManager = gm;
-                Security = gm.getPermissionHandler();
+                Security = new NijikoPermissionsProxy(gm);
             } else {
                 System.err.println("OOOPS! Fake " + pdfFile.getName() + " version " + pdfFile.getVersion() + " couldn't find GroupManager!");
                 this.getPluginLoader().disablePlugin(this);
