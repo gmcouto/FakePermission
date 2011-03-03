@@ -108,12 +108,12 @@ public class NijikoPermissionsProxy extends Control {
 
     @Override
     public void setDefaultWorld(String world) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        //throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public void setDirectory(File directory) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        //throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
@@ -123,7 +123,7 @@ public class NijikoPermissionsProxy extends Control {
 
     @Override
     public void forceLoadWorld(String world) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        //throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
@@ -133,22 +133,24 @@ public class NijikoPermissionsProxy extends Control {
 
     @Override
     public void load() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        //throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public void load(String world, Configuration config) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        //throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public void reload() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        plugin.getWorldsHolder().reloadAll();
+        //throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public boolean reload(String world) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        plugin.getWorldsHolder().reloadWorld(world);
+        return true;
     }
 
     @Override
